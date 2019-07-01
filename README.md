@@ -75,6 +75,11 @@ unzip stairs.zip
 
 ```
 python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-01/ 30 > stairs-seq-01-frames.txt
+python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-02/ 30 > stairs-seq-02-frames.txt
+python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-03/ 30 > stairs-seq-03-frames.txt
+python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-04/ 30 > stairs-seq-04-frames.txt
+python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-05/ 30 > stairs-seq-05-frames.txt
+python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-06/ 30 > stairs-seq-06-frames.txt
 ```
 
 
@@ -89,3 +94,30 @@ http://download.microsoft.com/download/2/8/5/28564B23-0828-408F-8631-23B1EFF1DAC
 http://download.microsoft.com/download/2/8/5/28564B23-0828-408F-8631-23B1EFF1DAC8/redkitchen.zip
 http://download.microsoft.com/download/2/8/5/28564B23-0828-408F-8631-23B1EFF1DAC8/stairs.zip
 ```
+
+
+### NYU Depth Dataset V2 
+
+
+
+The generate_nyu_depth_filelist is a python script that reads frame metadata and generates a streaming ready frame list file.
+
+```
+wget http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/basements.zip
+unzip basements.zip
+```
+
+This dataset as a slightly different structure: instead of frames being available in pairs (depth, color), they are captured as they come.
+THe script deals with this by choosing the frame pairs that are closer in time, as thus, aligned.
+
+
+```
+python generate_nyu_depth_filelist.py /home/amourao/data/nyc_depth/raw/basements/basement_0001a 30 > basement_0001a.txt
+```
+
+The full list of raw datasets is available below (HUGE 428 GB file):
+
+```
+http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_raw.zip
+```
+
