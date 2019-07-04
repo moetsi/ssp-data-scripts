@@ -41,9 +41,7 @@ def parse_metadata(base_folder, framerate):
 	sensorId = base_folder.split("/")[-1]
 	sceneDesc = base_folder.split("/")[-2]
 	
-	sensorId = sensorId[-2:]
-
-	sensorId = 0
+	sensorId = int(sensorId[-2:])
 	deviceId = 0
 	print("ms_rgbd_7s_{};{};{};{}".format(sceneDesc, sensorId, deviceId, framerate))
 
