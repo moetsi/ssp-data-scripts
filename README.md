@@ -47,7 +47,7 @@ unzip apt0.zip
 Run the following command on the davp folder:
 
 ```
-python generate_bundle_fusion_filelist.py /home/amourao/data/bundle_fusion/apt0/ 30 > apt0-frames.txt
+python generate_bundle_fusion_filelist.py ~/data/bundle_fusion/apt0/ 30 > apt0-frames.txt
 ```
 
 The full list of datasets is available below:
@@ -74,12 +74,12 @@ unzip stairs.zip
 ```
 
 ```
-python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-01/ 30 > stairs-seq-01-frames.txt
-python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-02/ 30 > stairs-seq-02-frames.txt
-python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-03/ 30 > stairs-seq-03-frames.txt
-python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-04/ 30 > stairs-seq-04-frames.txt
-python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-05/ 30 > stairs-seq-05-frames.txt
-python generate_ms_rgbd_7s_filelist.py /home/amourao/data/ms_rgbd_7s/stairs/seq-06/ 30 > stairs-seq-06-frames.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-01/ 30 > stairs-seq-01-frames.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-02/ 30 > stairs-seq-02-frames.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-03/ 30 > stairs-seq-03-frames.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-04/ 30 > stairs-seq-04-frames.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-05/ 30 > stairs-seq-05-frames.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-06/ 30 > stairs-seq-06-frames.txt
 ```
 
 
@@ -112,7 +112,7 @@ The script deals with this by choosing the frame pairs that are closer in time, 
 
 
 ```
-python generate_nyu_depth_filelist.py /home/amourao/data/nyc_depth/raw/basements/basement_0001a 30 > basement_0001a.txt
+python generate_nyu_depth_filelist.py ~/data/nyc_depth/raw/basements/basement_0001a 30 > basement_0001a.txt
 ```
 
 The full list of raw datasets is available below (HUGE 428 GB file):
