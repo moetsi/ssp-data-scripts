@@ -10,9 +10,9 @@ It has the following structure:
 ```
 <dataset name>;<device id>;<sensor id>;<fps>
 <number of frames>
-<frame id>;<color frame path>;<color frame path>
-<frame id>;<color frame path>;<color frame path>
-<frame id>;<color frame path>;<color frame path>
+<frame id>;<color frame path>;<depth frame path>
+<frame id>;<color frame path>;<depth frame path>
+<frame id>;<color frame path>;<depth frame path>
 ....
 ```
 
@@ -108,7 +108,7 @@ unzip basements.zip
 ```
 
 This dataset as a slightly different structure: instead of frames being available in pairs (depth, color), they are captured as they come.
-THe script deals with this by choosing the frame pairs that are closer in time, as thus, aligned.
+The script deals with this by choosing the frame pairs that are closer in time, as thus, aligned.
 
 
 ```
