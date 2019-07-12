@@ -121,3 +121,12 @@ The full list of raw datasets is available below (HUGE 428 GB file):
 http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_raw.zip
 ```
 
+# FFmpeg video creation
+
+Create videos using multiple presets (h264, h265, ....)
+
+## Usage
+
+Copy the batch scripts to the folders with the extracted data (bundle_fusion and ms_rgbd) and run them.
+
+Videos will be outputed to a new videos folder
