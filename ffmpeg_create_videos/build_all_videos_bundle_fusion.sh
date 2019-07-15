@@ -15,12 +15,12 @@ for folder in $folders
 do
 	for crf in $crfs264
 	do
-		ffmpeg -threads 4 -framerate 30 -pattern_type glob -i '$folder/*.depth.png' -crf $crf videos/$folder.depth-h264-$crf.mp4
-		ffmpeg -threads 4 -framerate 30 -pattern_type glob -i '$folder/*.color.jpg' -crf $crf videos/$folder.color-h264-$crf.mp4
+		ffmpeg -threads 4 -framerate 30 -pattern_type glob -i "$folder/*.depth.png" -crf $crf videos/$folder.depth-h264-$crf.mp4
+		ffmpeg -threads 4 -framerate 30 -pattern_type glob -i "$folder/*.color.jpg" -crf $crf videos/$folder.color-h264-$crf.mp4
 	done
 	for crf in $crfs265
 	do
-		ffmpeg -threads 4 -framerate 30 -pattern_type glob -i '$folder/*.depth.png' -vcodec libx265 -crf $crf videos/$folder.depth-h265-$crf.mp4
-		ffmpeg -threads 4 -framerate 30 -pattern_type glob -i '$folder/*.color.jpg' -vcodec libx265 -crf $crf videos/$folder.color-h265-$crf.mp4
+		ffmpeg -threads 4 -framerate 30 -pattern_type glob -i "$folder/*.depth.png" -vcodec libx265 -crf $crf videos/$folder.depth-h265-$crf.mp4
+		ffmpeg -threads 4 -framerate 30 -pattern_type glob -i "$folder/*.color.jpg" -vcodec libx265 -crf $crf videos/$folder.color-h265-$crf.mp4
 	done			
 done

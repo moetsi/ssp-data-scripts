@@ -17,13 +17,13 @@ do
 	do
 		for crf in $crfs264
 		do
-			ffmpeg -threads 4 -framerate 30 -pattern_type glob -i '$folder/seq-$seqnum/*.depth.png' -crf $crf videos/$folder.$seqnum.depth-h264-$crf.mp4
-			ffmpeg -threads 4 -framerate 30 -pattern_type glob -i '$folder/seq-$seqnum/*.color.png' -crf $crf videos/$folder.$seqnum.color-h264-$crf.mp4
+			ffmpeg -threads 4 -framerate 30 -pattern_type glob -i "$folder/seq-$seqnum/*.depth.png" -crf $crf videos/$folder.$seqnum.depth-h264-$crf.mp4
+			ffmpeg -threads 4 -framerate 30 -pattern_type glob -i "$folder/seq-$seqnum/*.color.png" -crf $crf videos/$folder.$seqnum.color-h264-$crf.mp4
 		done
 		for crf in $crfs265
 		do
-			ffmpeg -threads 4 -framerate 30 -pattern_type glob -i '$folder/seq-$seqnum/*.depth.png' -vcodec libx265 -crf $crf videos/$folder.$seqnum.depth-h265-$crf.mp4
-			ffmpeg -threads 4 -framerate 30 -pattern_type glob -i '$folder/seq-$seqnum/*.color.png' -vcodec libx265 -crf $crf videos/$folder.$seqnum.color-h265-$crf.mp4
+			ffmpeg -threads 4 -framerate 30 -pattern_type glob -i "$folder/seq-$seqnum/*.depth.png" -vcodec libx265 -crf $crf videos/$folder.$seqnum.depth-h265-$crf.mp4
+			ffmpeg -threads 4 -framerate 30 -pattern_type glob -i "$folder/seq-$seqnum/*.color.png" -vcodec libx265 -crf $crf videos/$folder.$seqnum.color-h265-$crf.mp4
 		done			
 	done			
 done
