@@ -8,21 +8,21 @@ The DAVP frame format was created to be compatible with existing RGB-D datasets 
 It has the following structure:
 
 ```
-<dataset name>;<device id>;<sensor id>;<fps>
+<dataset name>;<device id>;<sensor id>;<frame type>;<fps>
 <number of frames>
-<frame id>;<color frame path>;<depth frame path>
-<frame id>;<color frame path>;<depth frame path>
-<frame id>;<color frame path>;<depth frame path>
+<frame id>;<frame path>
+<frame id>;<frame path>
+<frame id>;<frame path>
 ....
 ```
 
 Example:
 
 ```
-bundle_fusion_apt0;0;0;30
+bundle_fusion_apt0;0;0;0;30
 8560
-0;/home/amourao/data/bundle_fusion/apt0/frame-000000.color.jpg;/home/amourao/data/bundle_fusion/apt0/frame-000000.depth.png
-1;/home/amourao/data/bundle_fusion/apt0/frame-000001.color.jpg;/home/amourao/data/bundle_fusion/apt0/frame-000001.depth.png
+0;/home/amourao/data/bundle_fusion/apt0/frame-000000.color.jpg
+1;/home/amourao/data/bundle_fusion/apt0/frame-000001.color.jpg
 ....
 ```
 
@@ -47,7 +47,8 @@ unzip apt0.zip
 Run the following command on the davp folder:
 
 ```
-python generate_bundle_fusion_filelist.py ~/data/bundle_fusion/apt0/ 30 > apt0-frames.txt
+python generate_bundle_fusion_filelist.py ~/data/bundle_fusion/apt0/ "frame-*.color.png"  30 > apt0-frames-color.txt
+python generate_bundle_fusion_filelist.py ~/data/bundle_fusion/apt0/ "frame-*.depth.png"  30 > apt0-frames-depth.txt
 ```
 
 The full list of datasets is available below:
@@ -74,12 +75,19 @@ unzip stairs.zip
 ```
 
 ```
-python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-01/ 30 > stairs-seq-01-frames.txt
-python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-02/ 30 > stairs-seq-02-frames.txt
-python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-03/ 30 > stairs-seq-03-frames.txt
-python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-04/ 30 > stairs-seq-04-frames.txt
-python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-05/ 30 > stairs-seq-05-frames.txt
-python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-06/ 30 > stairs-seq-06-frames.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-01/ "frame-*.depth.png" 30 > stairs-seq-01-frames-depth.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-02/ "frame-*.depth.png" 30 > stairs-seq-02-frames-depth.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-03/ "frame-*.depth.png" 30 > stairs-seq-03-frames-depth.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-04/ "frame-*.depth.png" 30 > stairs-seq-04-frames-depth.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-05/ "frame-*.depth.png" 30 > stairs-seq-05-frames-depth.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-06/ "frame-*.depth.png" 30 > stairs-seq-06-frames-depth.txt
+
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-01/ "frame-*.color.png" 30 > stairs-seq-01-frames-color.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-02/ "frame-*.color.png" 30 > stairs-seq-02-frames-color.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-03/ "frame-*.color.png" 30 > stairs-seq-03-frames-color.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-04/ "frame-*.color.png" 30 > stairs-seq-04-frames-color.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-05/ "frame-*.color.png" 30 > stairs-seq-05-frames-color.txt
+python generate_ms_rgbd_7s_filelist.py ~/data/ms_rgbd_7s/stairs/seq-06/ "frame-*.color.png" 30 > stairs-seq-06-frames-color.txt
 ```
 
 
@@ -112,7 +120,8 @@ The script deals with this by choosing the frame pairs that are closer in time, 
 
 
 ```
-python generate_nyu_depth_filelist.py ~/data/nyc_depth/raw/basements/basement_0001a 30 > basement_0001a.txt
+python generate_nyu_depth_filelist.py ~/data/nyc_depth/raw/basements/basement_0001a "r-*.ppm" 30 > basement_0001a_color.txt
+python generate_nyu_depth_filelist.py ~/data/nyc_depth/raw/basements/basement_0001a "d-*.pgm" 30 > basement_0001a_depth.txt
 ```
 
 The full list of raw datasets is available below (HUGE 428 GB file):
