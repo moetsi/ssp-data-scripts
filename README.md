@@ -1,10 +1,10 @@
-# DAVP Data Scripts
+# Sensor Stream Pipe Data Scripts
 
-This repo deals with processing data from existing datasets for DAVP processing.
+This repo deals with processing data from existing datasets for Sensor Stream Pipe processing.
 
-## DAVP Frame Format
+## Sensor Stream Pipe Frame Format
 
-The DAVP frame format was created to be compatible with existing RGB-D datasets with separate RGB and depth frames-
+The Sensor Stream Pipe frame format was created to be compatible with existing RGB-D datasets with separate RGB and depth frames-
 It has the following structure:
 
 ```
